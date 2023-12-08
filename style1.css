@@ -2,7 +2,7 @@ body {
     margin: 0;
     margin: 0 auto;
     padding: 0;
-    background: linear-gradient(45deg, Violet, Orange);
+    background: linear-gradient(45deg, Violet, rgb(235, 156, 9));
   }
   
   body::-webkit-scrollbar {
@@ -338,3 +338,7 @@ body {
 .canvasBtn {
     margin-right: 10px;
 }
+
+
+.center-text {
+  text-align: center;}

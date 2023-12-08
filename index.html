@@ -23,7 +23,7 @@
           $("#startButton").trigger("click");
           setTimeout(function(){
               $("#stopButton").trigger("click");
-          }, 30000);
+          }, 3000000);
       }
 
       
@@ -36,6 +36,8 @@
         <div class="text-wrap">
           <p id="HBD-text" class="lg-text"></p>
       </div>
+      <div class="center-text">
+      <div id="messages-container"></div></div>
 
       <article class="cake-wrap">
         <section id="candle" onclick="nextPage()">
@@ -57,11 +59,64 @@
           <div class="chiffon displayNone"></div>
           <div class="chiffon displayNone"></div>
         </section>
-        <div id="cake-bottom" class="displayNone"></div>
-
-        <h3 id="next-text" class="displayNone">생일 축하해요!</h3>
       </article>  
 
+      <script>
+        // 예제: 동적으로 메시지를 추가하는 함수
+        function addMessage(message) {
+          // 새로운 메시지를 생성하여 메시지 컨테이너에 추가
+          var newMessage = document.createElement('p');
+          newMessage.textContent = message;
+          document.getElementById('messages-container').appendChild(newMessage);
+        }
+    
+        // 예제: 메시지를 로테이션하는 함수
+        function rotateMessages(messages, interval) {
+          var index = 0;
+          setInterval(function () {
+            // 현재 메시지 삭제
+            $('#messages-container p').remove();
+    
+            // 다음 메시지 추가
+            addMessage(messages[index]);
+    
+            // 다음 인덱스로 이동 (순환)
+            index = (index + 1) % messages.length;
+          }, interval);
+        }
+    
+        // 예제: 여러 개의 축하 메시지를 추가
+        var birthdayMessages = [
+          '메챠야바잉 : 우정씨... 아이시떼루!!',
+          ' [ING]가장아름다운순간 :지금처럼 너가 행복한 방송을 해줘, 우린 모든 우정잉을 응원해',
+          '뽀삐뽀11:12 : 오늘은 토요일이니까 토요팅!',
+          '_챗챗_ : 언제나 어디서나 응원하고있으니까 망설이지 말고 가고싶은 방향으로 걸어가도 돼. 생일 진심으로 축하해! 화이팅!! '
+         ,'장발잉 : 생일 축하하고 열심히 달려와줘서 고마워. 항상 응원해👍'
+         ,'잉정우12: 항상 고맙지만 미안하기도하고 그냥 행복했음 좋겠어 화이팅!',
+         '으앍:잉 생일 축하해 항상 응원해~', 
+         '無人 : 어디를 가던 어디서 방송을 하던 항상 응원하고 언제나 최고인 우정잉의 생일을 축하해 잉친이가 되서 행복하고 우정잉 앞에 항상 꽃길만 펼쳐있으니 잉친이와 같이 걸어나가자 우정잉의 행복은 잉친이들의 행복 '
+        ,'어 형이야: 우정잉 평생 방송해~' ,
+        '봄이내려: 너의 모든 선택을 응원해!!!',
+        '김수한무 거북이와 우정잉 : 오래보자',
+        '왜이렇게어둡냐 : 항상 고마워 생일 축하해 끝까지 응원할게:)',
+        '넘버원탑: 방송해줘서 고마워 생일 축하해!' ,
+        '징을치는우엉: 잉! 잉덕분에 인방과 트위치 자체 빠질 수 있어서 기뻐! 항상 ㅎㅇㅌ 하고 어디서든 방송하는 걸 응원할게!!',
+        '고은현: 잉아 생일 정말 축하하고 방송해줘서 정말 고마워! 앞으로도 항상 팬으로써 함께할게! 우리 오래오래 보자~☺️ 우린 언제나 너의 편이야~'
+      ,'앞으로뒤잉테 : 우:우리..대장 우정아 정:정말..진심으로 생일 축하해 잉:잉옹잉옹오잉오~~해피뻐스데이',
+      '아무로 레잉 : 잉정아 건강하게 오래오래 살아~',
+      '셉삐 : 잉 같은 사람을 또 만날 수 있을까? 내 인생에 한 편의 추억으로 남아줘서 고맙고 찐 아홉수 생일 너무 축하해~~ 🎉🎉🎉',
+      '잉스프렌드 : 행복의 모양은 여러개지만 가장 큰 행복은 우정잉이야🫡',
+      '무무쓰: 우정아 항상 재밌는 방송 해줘서 너무 고마워 생일 너무 축하해!! 앞으로도 잘 부탁해!!',
+      '우엉징칭칙칙폭폭 : 비록 트위치는 사라지지만 우린 너가 가는곳 어디든 함께할게. 내 지친 삶에 유일한 엔돌핀 유토피아 우정잉! 항상 고맙고 우리 오래오래 보자 앞으로도 💜🌈'
+     ,'포니테잉 : 멋진녀석 행복하자',
+     '빨간조각 : 우정아 생일축하해 앞으로는 대포좀 잘먹어줘 부탁할게',
+     '동화상사 : 잉 생일 축하해 아프지말고 행복하게 살고 평생 응원할게~',
+     '거북팅이 : 오래전부터 봐았지만 언제나 재밌게 방송하시는 모습이 대단하다고 느껴졌어요. 시청자도 시청자지만 우정잉님이 즐겁고 재밌는 방송 해주셨으면 해요. 생일 축하드립니다!!!',  
+        ];
+    
+        // 메시지를 5초마다 변경
+        rotateMessages(birthdayMessages, 5000);
+      </script>
 
   <script src="script.js"></script> 
 </body>
