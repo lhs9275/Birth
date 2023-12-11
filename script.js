@@ -1,4 +1,3 @@
-// ==================================================== HBD text
 
 let target = document.getElementById("HBD-text");
 let stringArr = ["우정잉님의 생일을 축하합니다!!!"];
@@ -24,7 +23,6 @@ function restetTyping() {
 }
 
 // 한글자씩 텍스트 출력 함수
-//배열화 되어있는 값이 매개변수로 전달됨
 function hbdText(randomArr) {
 
 // 배열 길이 값이 0이 될 때까지 실행
@@ -52,7 +50,6 @@ function blink() {
 setInterval(blink, 600);
 
 
-// ==================================== cake motion
 
 // 5초 후 timeout
 setTimeout(function delCake() {
@@ -78,7 +75,6 @@ setTimeout(function delCake() {
 
 
 
-// ============================== next button
 
 function nextPage() {
   let nextButton = document.getElementById("candle");
