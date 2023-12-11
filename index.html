@@ -65,15 +65,15 @@
       </article>  
 
       <script>
-        // 예제: 동적으로 메시지를 추가하는 함수
+        
         function addMessage(message) {
-          // 새로운 메시지를 생성하여 메시지 컨테이너에 추가
+         
           var newMessage = document.createElement('p');
           newMessage.textContent = message;
           document.getElementById('messages-container').appendChild(newMessage);
         }
     
-        // 예제: 메시지를 로테이션하는 함수
+        
         function rotateMessages(messages, interval) {
           var index = 0;
           setInterval(function () {
@@ -88,7 +88,7 @@
           }, interval);
         }
     
-        // 예제: 여러 개의 축하 메시지를 추가
+        
         var birthdayMessages = [
           '메챠야바잉 : 우정씨... 아이시떼루!!',
           ' [ING]가장아름다운순간 :지금처럼 너가 행복한 방송을 해줘, 우린 모든 우정잉을 응원해',
