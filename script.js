@@ -1,6 +1,6 @@
 
 let target = document.getElementById("HBD-text");
-let stringArr = ["우정잉님의 생일을 축하합니다!!!"];
+let stringArr = ["생일을 축하합니다!!!"];
 
 // 배열 크기 미만인 값까지 가져옴
 let selectString = stringArr[Math.floor(Math.random() * stringArr.length)];
