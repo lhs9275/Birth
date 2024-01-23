@@ -9,7 +9,7 @@ let selectString = stringArr[Math.floor(Math.random() * stringArr.length)];
 let selectStringArr = selectString.split(""); 
 
 function randomString() {
-  let stringArr = ["우정잉님의 생일을 축하합니다!!!" ]; 
+  let stringArr = ["생일을 축하합니다!!!" ]; 
   let selectString = stringArr[Math.floor(Math.random() * stringArr.length)];
   let selectStringArr = selectString.split("");  
 
